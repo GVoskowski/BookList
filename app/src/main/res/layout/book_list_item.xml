@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Layout for a single list item that displays an earthquake -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="?android:attr/listPreferredItemHeight"
+              android:orientation="horizontal"
+              android:paddingEnd="@dimen/dp16"
+              android:paddingLeft="@dimen/dp16"
+              android:paddingRight="@dimen/dp16"
+              android:paddingStart="@dimen/dp16"
+    >
+
+    <TextView
+        android:id="@+id/book_rating"
+        android:layout_width="@dimen/dp36"
+        android:layout_height="@dimen/dp36"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/black"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp16"
+        tools:text="@string/rate"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp8">
+
+        <TextView
+            android:id="@+id/book_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp14"
+            tools:text="@string/title_str"/>
+
+        <TextView
+            android:id="@+id/book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/author"
+            android:textSize="@dimen/sp12"/>
+
+        <TextView
+            android:id="@+id/book_snippet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/sp14"
+            android:textStyle="italic"
+            tools:text="@string/desc_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginStart="@dimen/dp16"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/book_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/sp12"
+            tools:text="@string/price_e"/>
+
+    </LinearLayout>
+</LinearLayout>

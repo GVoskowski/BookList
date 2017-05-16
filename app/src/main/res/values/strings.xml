@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BookList</string>
+    <string name="instructions">Please search for a book</string>
+    <string name="no_books">No books available</string>
+    <string name="no_internet_conn">No Internet Connection</string>
+    <string name="network_fail">Network failure</string>
+    <string name="rating">Rating</string>
+    <string name="title_author_description">Title/Author/Description</string>
+    <string name="price">Price/€</string>
+    <string name="author">Author</string>
+    <string name="search_the_book_library">Search the Book Library</string>
+    <string name="rate">8.9</string>
+    <string name="title_str">Title</string>
+    <string name="desc_text">place holder for description</string>
+    <string name="price_e">18$</string>
+</resources>

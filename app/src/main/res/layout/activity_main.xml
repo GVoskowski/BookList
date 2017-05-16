@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp8"
+        android:layout_marginStart="@dimen/dp8"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/search_edit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp45"
+            android:layout_weight="1"
+            android:hint="@string/search_the_book_library"/>
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp45"
+            android:layout_weight="0.09"
+            android:background="#00000000"
+            android:src="@drawable/ic_search_black_24dp"
+            tools:ignore="ContentDescription"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/explaination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_bar"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp8"
+        android:paddingTop="@dimen/dp8"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/rating"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/title_author_description"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp8"
+            android:layout_marginRight="@dimen/dp8"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/price"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/explaination"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        />
+
+    <!-- Empty view is only visible when the list has no items. -->
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:textAppearanceMedium"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>
