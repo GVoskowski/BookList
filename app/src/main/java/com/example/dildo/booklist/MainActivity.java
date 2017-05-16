@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     Format EditText
      */
     private String formatSearch(String query) {
-
         return query.replace(" ", "+") + RESULTS;
     }
 

@@ -120,7 +120,11 @@ class QueryUtils {
                     String title = volumeInfo.getString("title");
 
                     String authors;
-                    authors = volumeInfo.getString("authors");
+                    if (volumeInfo.has("authors")) {
+                        authors = volumeInfo.getString("authors");
+                    } else {
+                        authors = "No Authors";
+                    }
 
 
                     double rating;
