@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final int BOOK_LOADER_ID = 1;
     private static final String LOG_TAG = MainActivity.class.getName();
     /* max results for json url*/
-    private static final String RESULTS = "&maxResults=15";
+    private static final String RESULTS = "&maxResults=25";
     private EditText searchField;
     private TextView emptyState;
     private BookAdapter mAdapter;
@@ -43,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoadFinished(Loader<List<Book>> loader, List<Book> data) {
 
         progressBar.setVisibility(View.GONE);
-
         emptyState.setVisibility(View.VISIBLE);
         explain.setVisibility(View.VISIBLE);
 
@@ -160,8 +161,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     /*
     Format EditText
      */
-    private String formatSearch(String query) {
-        return query.replace(" ", "+") + RESULTS;
+    String formatSearch(String query) {
+        try {
+            return URLEncoder.encode(query,"UTF-8")+RESULTS;
+        } catch (UnsupportedEncodingException e) {
+            System.err.println("Uh oh...");
+        }
+        return query;
     }
 
     /*
